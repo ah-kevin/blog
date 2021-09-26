@@ -1,4 +1,6 @@
 baseURL = 'http://example.org/'
-languageCode = 'en-us'
+languageCode = 'zh-Hans'
 title = 'Whale Site'
 theme = 'whale'
+[params]
+    favicon = 'https://lennon-blog.oss-cn-hangzhou.aliyuncs.com/common/icon.png'

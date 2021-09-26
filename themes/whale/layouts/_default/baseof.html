@@ -1,6 +1,18 @@
 <!DOCTYPE html>
-<html>
-    {{- partial "head.html" . -}}
+<html lang="{{.Site.LanguageCode}}">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>{{ block "title" . }} {{- T "home" -}} {{ end }} | {{ .Site.Title }}</title>
+        {{- partial "head.html" . -}}
+        
+        {{ block "css" . }}{{ end }}
+
+        {{ range .Site.Params.Advanced.customCSS }}
+        <link rel="stylesheet" href="{{ . | relURL }}" />
+        {{ end }}
+    </head>
     <body>
         {{- partial "header.html" . -}}
         <div id="content">
