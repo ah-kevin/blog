@@ -14,3 +14,19 @@
 
 <!-- Site Generator -->
 {{ hugo.Generator }}
+
+<link rel="canonical" href="{{ .Permalink }}" />
+
+<!-- Open Graph -->
+{{ template "_internal/opengraph.html" . }}
+
+<!-- Twitter Cards -->
+{{ template "_internal/twitter_cards.html" . }}
+
+{{$mainScss:=.Site.Params.Scss}}
+{{ $style := resources.Get $mainScss | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink }}">
+<!-- font-->
+<link rel="stylesheet" href="{{.Site.Params.CDN.fontawesome }}" />
+
+{{ partial "head/noscript" . }}

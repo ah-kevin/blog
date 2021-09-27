@@ -1,0 +1,20 @@
+baseURL = 'http://example.org/'
+languageCode = 'zh-Hans'
+title = 'Whale Site'
+theme = 'whale'
+[params]
+    favicon = 'https://lennon-blog.oss-cn-hangzhou.aliyuncs.com/common/icon.png'
+    scss = 'scss/main.scss'
+    #theme
+    [params.themes]
+       mode = 'light'
+    [params.cdn]
+        # main
+        main_css = '/css/index.css'
+        jquery = 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js'
+        main = '/js/main.js'
+        utils = '/js/utils.js'
+          # fontawesome
+        fontawesome= 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css'
+
+    
