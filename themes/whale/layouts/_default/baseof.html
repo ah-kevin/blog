@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{.Site.LanguageCode}}" data-theme="{{.Site.Params.Themes.mode}}">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{{ block "title" . }} {{- T "home" -}} {{ end }} | {{ .Site.Title }}</title>
+    {{- partial "head.html" . -}}
+
+    {{ block "css" . }}{{ end }}
+
+    {{ range .Site.Params.Advanced.customCSS }}
+        <link rel="stylesheet" href="{{ . | relURL }}" />
+    {{ end }}
+</head>
+<body>
+<div id="body-wrap" class="page">
+    {{- block "main" . }}{{- end }}
+</div>
+
+
+{{- partial "footer.html" . -}}
+
+{{ block "js" . }} {{ end }}
+
+</body>
+</html>

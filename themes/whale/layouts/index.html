@@ -1,0 +1,16 @@
+{{ define "main"}}
+    {{- partial "header/index.html" . -}}
+
+    <div id="content-inner">
+        {{.IsHome}}
+        {{ .Sites|jsonify (dict "indent" "  ")}}
+        {{/*        {{printf "%#s" .Data}}*/}}
+    </div>
+
+{{end}}
+
+{{ define "js" }}
+    {{/*js import*/}}
+    {{ $js := resources.Get "js/index.ts" | js.Build }}
+    <script src="{{$js.RelPermalink}}"></script>
+{{end}}
